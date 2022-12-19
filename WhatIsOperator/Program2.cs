@@ -197,12 +197,20 @@ namespace WhatIsOperator
              */
 
             int numberX, numberY, numberZ;
-            Console.Write("x값을 입력하시오: ");
-            int.TryParse(Console.ReadLine(), out numberX);
-            Console.Write("y값을 입력하시오: ");
-            int.TryParse(Console.ReadLine(), out numberY);
-            Console.Write("z값을 입력하시오: ");
-            int.TryParse(Console.ReadLine(), out numberZ);
+            Console.WriteLine("세 개의 정수를 입력하시오. /스페이스로 구분");
+            string num = Console.ReadLine();
+            string[] str_num = num.Split(' ');
+            int.TryParse(str_num[0], out numberX);
+            int.TryParse(str_num[1], out numberY);
+            int.TryParse(str_num[2], out numberZ);
+
+            //int numberX, numberY, numberZ;
+            //Console.Write("x값을 입력하시오: ");
+            //int.TryParse(Console.ReadLine(), out numberX);
+            //Console.Write("y값을 입력하시오: ");
+            //int.TryParse(Console.ReadLine(), out numberY);
+            //Console.Write("z값을 입력하시오: ");
+            //int.TryParse(Console.ReadLine(), out numberZ);
 
             if(numberX > numberY && numberX > numberZ)
             {
