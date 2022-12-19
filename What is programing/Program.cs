@@ -333,26 +333,32 @@ namespace WhatIsProgramming
              * 키워드: 캐트팅 연산자, 암시적(묵시적) 형변환, 명시적 형변환
              * 
              * 4가지의 형변환 하는 법
-             */
+            // */
 
-            Console.Write("숫자를 입력하시오: ");
-            string stringNumber = Console.ReadLine();
-            int intNumber = Convert.ToInt32(stringNumber);
-            int intNumber2 = int.Parse(stringNumber);
-            // * 추천스타일 - TryParse
-            int intNumber3 = default;
-            int.TryParse(stringNumber, out intNumber3);
+            //Console.Write("숫자를 입력하시오: ");
+            //string stringNumber = Console.ReadLine();
+            //int intNumber = Convert.ToInt32(stringNumber);
+            //int intNumber2 = int.Parse(stringNumber);
+            //// * 추천스타일 - TryParse
+            //int intNumber3 = default;
+            //int.TryParse(stringNumber, out intNumber3);
 
-            Console.WriteLine("입력한 숫자 + 10은(는) {0}입니다.", intNumber3 + 10);
+            //Console.WriteLine("입력한 숫자 + 10은(는) {0}입니다.", intNumber3 + 10);
 
-            Console.Write("반지름의 길이: ");
-            string stringNumber1 = Console.ReadLine();
-            float floatnumber = default;
-            float.TryParse(stringNumber1, out floatnumber);
+            //Console.Write("반지름의 길이: ");
+            //string stringNumber1 = Console.ReadLine();
+            //float floatnumber = default;
+            //float.TryParse(stringNumber1, out floatnumber);
 
-            Console.WriteLine("구의 부피. {0}", floatnumber * floatnumber * floatnumber *4/3 *PI);
-            Console.WriteLine("구의 넓이. {0}", floatnumber * floatnumber  * 4  * PI);
+            //Console.WriteLine("구의 부피. {0}", floatnumber * floatnumber * floatnumber *4/3 *PI);
+            //Console.WriteLine("구의 넓이. {0}", floatnumber * floatnumber  * 4  * PI);
 
+
+            Console.WriteLine("X");
+            string numberx = Console.ReadLine();
+            float numbery = default;
+            float.TryParse(numberx, out numbery);
+            Console.WriteLine(numbery)
 
 
 
