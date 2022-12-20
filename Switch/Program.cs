@@ -535,12 +535,34 @@ namespace Switch
              * 두개의 정수를 입력 받아서 두 수의 차를 출력하는 프로그램 작성
              * 항상 큰 수에서 작은 수를 뺀 결과를 출력할것(결과는 0 이상)
              */
+            int firstNumber = 0;
+            int secondNumber = 0;            
+            Console.WriteLine("첫번째 정수를 입력하시오 : ");
+            int.TryParse(Console.ReadLine(), out firstNumber);
+            Console.WriteLine("두번째 정수를 입력하시오 : ");
+            int.TryParse(Console.ReadLine(), out secondNumber);
+            int answer1 = firstNumber - secondNumber;
+            int answer2 = secondNumber - firstNumber;
+
+                if (firstNumber >= secondNumber) 
+                { 
+                    Console.WriteLine("{0} - {1} = {2}",firstNumber,secondNumber,answer1);
+                }
+                else 
+                {
+                    Console.WriteLine("{1} - {0} = {2}", firstNumber, secondNumber,answer2);
+
+                }
+
 
             /**
              * 구구단을 출력하되 짝수(2단, 4단, 6단, 8단)만 출력되도록 하는 프로그램을 작성
              * 2단은 2x2까지만 4단은 4x4까지만...~8단은 8x8까지만 출력한다
              * break와 continue를 사용할 것
              */
+
+
+
 
             /**
              * 다음 식을 만족하는 모든 A와 Z를 구하는 프로그램을 작성
@@ -549,6 +571,9 @@ namespace Switch
              *       -------
              *          9 9
              */
+
+
+            
         }
     }
     }
