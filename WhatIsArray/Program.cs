@@ -17,29 +17,24 @@ namespace WhatIsArray
             //3의 배수를 제외한 수
             //int variable_ = 100;
 
-            //int sumOfNumber = 0;
+            int sumOfNumber = 0;
 
-            //for (int variable_ = 1; variable_ <= 100; variable_++)
-            //{
+            for (int variable_ = 1; variable_ <= 100; variable_++)
+            {
             //    bool multiplethree = (variable_ % 3 == 0);
             //    Console.WriteLine("{0}->is isRealMultipleOfThree: {1}", variable_, multiplethree);  //3의 배수인지 확인
-            //    if (multiplethree == false)
-            //    {
-            //        //3의 배수가 아닌 것들
-            //        sumOfNumber += variable_;
-            //        Console.WriteLine("{0}", sumOfNumber);
-            //    }
-            //    else
-            //    {
-            //    }
-            //    Console.WriteLine();
+                if (variable_%3==0)
+                {
+                    //        //3의 배수인 것들
+                }
+                else
+                {
+                    sumOfNumber += variable_;            
+                    Console.Write($"{variable_}, ");
+                }
 
-            //}
-            //Console.WriteLine();
-            //Console.WriteLine();
-            //Console.WriteLine();
-            //Console.WriteLine("==============================");
-            //Console.WriteLine($"{sumOfNumber}");
+            }
+            Console.WriteLine($"\n{sumOfNumber}");
 
 
             ////조건문에 대해
@@ -87,6 +82,23 @@ namespace WhatIsArray
             ////그 수만큼 "Hello world!"를 출력하는 프로그램 작성.
             //int someNumber = 100;
             //bool isPositiveInteger = (0 < someNumber);  //someNumber 가 양의 정수인지 확인 (T/F)
+
+            int inputPositive = 0;
+            Console.WriteLine("양의 정수를 입력하세요.");
+            int.TryParse(Console.ReadLine(), out inputPositive);
+
+            if(inputPositive > 0)
+            {
+                while (inputPositive > 0) 
+                {
+                    Console.WriteLine("Hello. world!");
+                    inputPositive--;
+                }
+            }
+            else
+            {
+                Console.WriteLine("다시 입력하세요.");
+            }
 
             ///**
             // * 프로그램 사용자로부터 계속해서 정수를 입력 받는다.
@@ -143,6 +155,19 @@ namespace WhatIsArray
             //else { }
 
             ////1~100숫자 중 3의배수이면서 4의 배수인 정수 합 구하기
+
+            int sumNum = 0;
+
+            for(int var_=0; var_<=100; var_++)
+            {
+                if (var_ % 3 == 0 && var_ % 4 == 0)
+                {
+                    sumNum+=var_;
+                }
+            }
+            Console.WriteLine("1~100숫자 중 3의배수이면서 4의 배수인 정수 합은 {0}이다", sumNum);
+
+
             //int sumNumber = 0;
             //int someNumber_2 = 100;
             //bool isMultipleOfThree = (someNumber % 3 == 0);
@@ -207,6 +232,29 @@ namespace WhatIsArray
 
             ////유저 입력 받아서 (1~20줄 이내).유저 입력은 줄의 개수
             ////등차 수열로 한 단 내려갈때마다 별 1개씩 추가로 증가하는 프로그램 작성
+
+            int userInput1_ = 0;
+            Console.WriteLine("1~20 사이의 정수를 입력하세요.");
+            int.TryParse(Console.ReadLine(), out userInput1_);
+            int upperPyramid = (userInput1_ - 1) / 2 + 1;
+            if (1 <= userInput1_ && userInput1_ <= 20)
+            {
+                for (int index = 1; index <= upperPyramid; index++)
+                {
+                    for(int index1=1; index1<=upperPyramid-index; index1++)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int index1 = 1; index1 <= 2*index-1; index1++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.Write("\n");
+
+                }
+            }
+
+
             //int userInput = 0;
             //Console.WriteLine("숫자 입력: ");
             //int.TryParse(Console.ReadLine(), out userInput);
@@ -308,224 +356,127 @@ namespace WhatIsArray
 
 
 
-            //123
-            //볼을
-
-            //int a = 0;
-            //int b = 0;
-            //int c = 0;
-            //int com_num1 = 1;
-            //int com_num2 = 2;
-            //int com_num3 = 3;
-            //int str = 0;
-            //int ball = 0;
-            //for (int count=1; count<=9; count++)
-            //{
-            //    Console.WriteLine("첫번째 숫자를 입력하시오: ");
-            //    int.TryParse(Console.ReadLine(), out a);
-            //    Console.WriteLine("두번째 숫자를 입력하시오: ");
-            //    int.TryParse(Console.ReadLine(), out b);
-            //    Console.WriteLine("세번째 숫자를 입력하시오: ");
-            //    int.TryParse(Console.ReadLine(), out c);
-            //    if (a == com_num1 && b == com_num2 && c == com_num3)
-            //    {
-            //        break;
-            //    }
-            //    else if (a == com_num1) 
-            //    { 
-            //        ++str;
-            //        if(b == com_num2)
-            //        {
-            //            ++str;
-            //        }
-            //        else if(b == com_num3)
-            //        {
-            //            ++ball;
-            //        }
-            //        else if(c == com_num3)
-            //        {
-            //            ++str;
-            //        }
-            //        else if(c == com_num2)
-            //        {
-            //            ++ball;
-            //        }
-            //        else
-            //        {
-
-            //        }
-            //    }
-            //    else if (b == com_num2)
-            //    {
-            //        ++str; 
-
-            //        if (a == com_num3)
-            //        {
-            //            ++ball;
-            //        }
-            //        else if (c == com_num3)
-            //        {
-            //            ++str;
-            //        }
-            //        else if (c == com_num1)
-            //        {
-            //            ++ball;
-            //        }
-            //        else
-            //        {
-
-            //        }
-            //    }
-            //    else if (c == com_num3)
-            //    {
-            //        ++str;
-            //        if (a == com_num2)
-            //        {
-            //            ++ball;
-            //        }
-            //        else if (b == com_num1)
-            //        {
-            //            ++ball;
-            //        }
-            //        else
-            //        {
-
-            //        }
-            //    }
-            //    else if (a == com_num2)
-            //    {
-            //        ++ball;
-            //    }
-            //    else if (a == com_num3)
-            //    {
-            //        ++ball;
-            //    }
-            //    else if (b == com_num1)
-            //    {
-            //        ++ball;
-            //    }
-            //    else if (a == com_num3)
-            //    {
-            //        ++ball;
-            //    }
-            //    else if (c == com_num1)
-            //    {
-            //        ++ball;
-            //    }
-            //    else if (c == com_num2)
-            //    {
-            //        ++ball;
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("아웃");                    
-            //    }
-            //    Console.WriteLine("{0}s {1}b", str, ball);
-            //}
-
+            //숫자야구
             //
-            //if (a == com_num1 && b == com_num2 && c == com_num3)
-            //{
-            //        int str = 0;
-            //        int ball = 0;
-            //        for (; ; )
-            //        {
-            //            Console.WriteLine("첫번째 숫자를 입력하시오: ");
-            //            int.TryParse(Console.ReadLine(), out a);
-            //            if (a == com_num1)
-            //            {
-            //                ++str;
-            //                break;
-            //            }
-            //            else if (a == com_num2)
-            //            {
-            //                ++ball;
-            //                break;
-            //            }
-            //            else if (a == com_num3)
-            //            {
-            //                ++ball;
-            //                break;
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            int com_num1 = 1;
+            int com_num2 = 2;
+            int com_num3 = 3;
 
-            //            }
-            //            else
-            //            {
-            //                break;
+            for (int count = 1; count <= 10; count++)
+            {
+                if (a == com_num1 && b == com_num2 && c == com_num3)
+                {
+                    Console.WriteLine("승리");
+                    break;
+                }
+                else if (count == 10)
+                {
+                    Console.WriteLine("패배");
+                    break;
+                }
+                else
+                {
+                    int str = 0;
+                    int ball = 0;
+                    Console.WriteLine("{0}번째 기회", count);
+                    while (true)
+                    {
+                        Console.WriteLine("첫번째 숫자를 입력하시오: ");
+                        int.TryParse(Console.ReadLine(), out a);
+                        if (a == com_num1)
+                        {
+                            ++str;
+                            break;
+                        }
+                        else if (a == com_num2)
+                        {
+                            ++ball;
+                            break;
+                        }
+                        else if (a == com_num3)
+                        {
+                            ++ball;
+                            break;
 
-            //            }
-            //        }
-            //        for (; ; )
-            //        {
-            //            Console.WriteLine("두번째 숫자입력하시오: ");
-            //            int.TryParse(Console.ReadLine(), out b);
-            //            if (b == com_num2)
-            //            {
-            //                ++str;
-            //                break;
+                        }
+                        else
+                        {
+                            break;
 
-            //            }
-            //            else if (b == com_num1)
-            //            {
-            //                ++ball;
-            //                break;
+                        }
+                    }
+                    while (true)
+                    {
+                        Console.WriteLine("두번째 숫자입력하시오: ");
+                        int.TryParse(Console.ReadLine(), out b);
+                        if (b == com_num2)
+                        {
+                            ++str;
+                            break;
 
-            //            }
-            //            else if (b == com_num3)
-            //            {
-            //                ++ball;
-            //                break;
+                        }
+                        else if (b == com_num1)
+                        {
+                            ++ball;
+                            break;
 
-            //            }
-            //            else
-            //            {
-            //                break;
+                        }
+                        else if (b == com_num3)
+                        {
+                            ++ball;
+                            break;
 
-            //            }
-            //        }
-            //        for (; ; )
-            //        {
-            //            Console.WriteLine("세번째 숫자입력하시오: ");
-            //            int.TryParse(Console.ReadLine(), out c);
-            //            if (c == com_num3)
-            //            {
-            //                ++str;
-            //                break;
+                        }
+                        else
+                        {
+                            break;
 
-            //            }
-            //            else if (c == com_num1)
-            //            {
-            //                ++ball;
-            //                break;
+                        }
+                    }
+                    while (true)
+                    {
+                        Console.WriteLine("세번째 숫자입력하시오: ");
+                        int.TryParse(Console.ReadLine(), out c);
+                        if (c == com_num3)
+                        {
+                            ++str;
+                            break;
 
-            //            }
-            //            else if (c == com_num2)
-            //            {
-            //                ++ball;
-            //                break;
+                        }
+                        else if (c == com_num1)
+                        {
+                            ++ball;
+                            break;
 
-            //            }
-            //            else
-            //            {
-            //                break;
+                        }
+                        else if (c == com_num2)
+                        {
+                            ++ball;
+                            break;
 
-            //            }
-            //        }
-            //        if (str == 3)
-            //        {
-            //            Console.WriteLine("승리");
-            //        }
-            //        else if (str == 0 && ball == 0)
-            //        {
-            //            Console.WriteLine("아웃");
-            //        }
+                        }
+                        else
+                        {
+                            break;
 
-            //        else
-            //        {
-            //            Console.WriteLine("{0}s {1}b", str, ball);
-            //        }
+                        }
+                    }
+                    
+                    if (str == 0 && ball == 0)
+                    {
+                        Console.WriteLine("아웃");
+                    }
 
-
-            //}
+                    else if(str<3)
+                    {
+                        Console.WriteLine("{0}s {1}b", str, ball);
+                    }                
+                }
+            }
+               
 
             /**
              * 이름 하나로 데이터 여러 개를 담을 수 있는 자료  구조를 컬렉션(Collection) 또는
