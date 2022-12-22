@@ -248,8 +248,29 @@ namespace WhatIsArray_2
                     Console.WriteLine();
                 }
             }
+            Console.WriteLine("===============================================================");
+            Console.WriteLine("===============================================================");
+            Console.WriteLine("===============================================================");
+
+            //중복 제거
+            int[] uniqueArr = apple_Array.Distinct().ToArray();
+            int a = uniqueArr.GetLength(0);
+            for (int index = 1; index < a; index++)
+            {
+                int index1 = index - 1;
+                Console.Write("{0}개 ", uniqueArr[index1]);
+
+                if (index % 10 == 0)
+                {
+                    Console.WriteLine();
+                }
+            }
 
 
+            //foreach (int output1_ in uniqueArr)
+            //{
+            //    Console.Write("{0}개 ", output1_);
+            //}
 
 
 
