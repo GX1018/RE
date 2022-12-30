@@ -49,19 +49,23 @@ namespace PracticeXX
             }
 
             
-                for(int i= 0; i <panel.GetLength(0)-2; i++)
+                for(int i= 0; i <100; i++)
                 {
-                    
-                    temp = panel[i+1, panel.GetLength(1) / 2];
-                    panel[i+1, panel.GetLength(1) / 2] = panel[i, panel.GetLength(1) / 2];
-                    panel[i, panel.GetLength(1) / 2] = temp;
-
+                    if(panel[i + 1, panel.GetLength(1) / 2]== "  ")
+                    {
+                        temp = panel[i+1, panel.GetLength(1) / 2];
+                        panel[i+1, panel.GetLength(1) / 2] = panel[i, panel.GetLength(1) / 2];
+                        panel[i, panel.GetLength(1) / 2] = temp;
+                    }
+                    else
+                    {
+                        break;
+                    }
                     for (int y = 0; y < panel.GetLength(0); y++)
                     {
                         for (int x = 0; x < panel.GetLength(1); x++)
                         {
                             Console.Write(panel[y, x]);
-                            
                         }
                         Console.WriteLine();
                     }
