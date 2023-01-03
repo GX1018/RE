@@ -16,6 +16,9 @@ namespace Exercise0102
 
         public int[] scoreCheckArray = new int[13];
 
+        int playerScore = 0;
+        int comScore = 0;
+
         public string[] cardPattern = { "♠", "◆", "♥", "♣" };
         int temp;
         List<int> comList = new List<int>();
@@ -208,6 +211,8 @@ namespace Exercise0102
                 Console.Write("{0} ", scroeCheck);
             }
 
+            comScore = 0;
+
             int pairCheck = 0;
             int tripleCheck = 0;
             int fourCardCheck = 0;
@@ -227,6 +232,7 @@ namespace Exercise0102
                 if (count == 5)
                 {
                     flush++;
+                    comScore += 50;
                 }
             }
 
@@ -239,6 +245,7 @@ namespace Exercise0102
                     scoreCheckArray[indexStraight + 2] == scoreCheckArray[indexStraight + 3] && scoreCheckArray[indexStraight + 3] == scoreCheckArray[indexStraight + 4])
                 {
                     straightCheck++;
+                    comScore += 40;
                 }
             }
             
@@ -247,14 +254,17 @@ namespace Exercise0102
                 if(scoreCheckArray[index] == 2)
                 {
                     pairCheck++;
+                    comScore += 10;
                 }
                 else if(scoreCheckArray[index] == 3)
                 {
                     tripleCheck++;
+                    comScore += 30;
                 }
                 else if (scoreCheckArray[index] == 4)
                 {
                     fourCardCheck++;
+                    comScore += 60;
                 }
 
             }
@@ -313,6 +323,7 @@ namespace Exercise0102
                 Console.Write("{0} ", scroeCheck);
             }
 
+            playerScore = 0;
             int pairCheck = 0;
             int tripleCheck = 0;
             int fourCardCheck = 0;
@@ -330,6 +341,7 @@ namespace Exercise0102
                 if (count == 5)
                 {
                     flush++;
+                    playerScore += 50;
                 }
             }
 
@@ -340,6 +352,7 @@ namespace Exercise0102
                     scoreCheckArray[indexStraight + 2] == scoreCheckArray[indexStraight + 3] && scoreCheckArray[indexStraight + 3] == scoreCheckArray[indexStraight + 4])
                 {
                     straightCheck++;
+                    playerScore += 40;
                 }
             }
 
@@ -348,14 +361,17 @@ namespace Exercise0102
                 if (scoreCheckArray[index] == 2)
                 {
                     pairCheck++;
+                    playerScore += 10;
                 }
                 else if (scoreCheckArray[index] == 3)
                 {
                     tripleCheck++;
+                    playerScore += 30;
                 }
                 else if (scoreCheckArray[index] == 4)
                 {
                     fourCardCheck++;
+                    playerScore += 60;
                 }
 
             }
@@ -470,6 +486,21 @@ namespace Exercise0102
             }
         }
 
+        public void WinnerCheck()
+        {
+            if (comScore > playerScore)
+            {
+                Console.WriteLine("딜러 승리");
+                point -= betPoint;
+            }
+            else if(comScore < playerScore)
+            {
+                Console.WriteLine("플레이어 승리");
+                point += betPoint;
+            }
+            else { Console.WriteLine("무승부"); }
+        }
+
 
         public void GameStart()
         {
@@ -479,6 +510,7 @@ namespace Exercise0102
             PointBetting();
             ComDrawCard2();
             PlayerChangeCard();
+            WinnerCheck();
         }
 
 
