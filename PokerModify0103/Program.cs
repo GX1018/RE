@@ -1,4 +1,6 @@
-﻿namespace Poker_new
+﻿using System;
+
+namespace Poker_new
 {
     public class Program
     {
@@ -11,15 +13,27 @@
 
 
             CardSetting card = new CardSetting();
+            Dealer dealer= new Dealer();
 
             card.MakeCardSet(trumpCard);
-            card.Suffle(300, trumpCard);
-            //card.PrintCardSet(trumpCard);
-            card.CardDraw(dealerHand, 5, trumpCard);
+            //card.Suffle(300, trumpCard);
+            dealer.Suffle(300, trumpCard);
+
+            Console.WriteLine("딜러 카드");
+            dealer.CardDraw(dealerHand, 5, trumpCard);
             card.OpenCard(5, dealerHand);
 
-            card.CardDraw(playerHand, 5, trumpCard);
+
+            dealer.OpenCard(trumpCard, int index)
+
+
+            Console.WriteLine("플레이어 카드");
+            dealer.CardDraw(playerHand, 5, trumpCard);
             card.OpenCard(5, playerHand);
+
+
+
+            
 
 
 
